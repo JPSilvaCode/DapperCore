@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCWebAPI", "src\DCWebAPI\DC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCDomain", "src\DCDomain\DCDomain.csproj", "{9BE8D507-9A24-4DA1-983D-A7C21378BF71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCData", "src\DCData\DCData.csproj", "{6BEE0240-AD9E-44BA-B4FE-4D9C6B18CE6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9BE8D507-9A24-4DA1-983D-A7C21378BF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BE8D507-9A24-4DA1-983D-A7C21378BF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BE8D507-9A24-4DA1-983D-A7C21378BF71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BEE0240-AD9E-44BA-B4FE-4D9C6B18CE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BEE0240-AD9E-44BA-B4FE-4D9C6B18CE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BEE0240-AD9E-44BA-B4FE-4D9C6B18CE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BEE0240-AD9E-44BA-B4FE-4D9C6B18CE6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
