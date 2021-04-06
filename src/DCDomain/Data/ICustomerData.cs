@@ -7,12 +7,12 @@ namespace DCDomain.Data
 {
     public interface ICustomerData : IDisposable
     {
-        Task GetById(Guid id);
+        Task<Customer> GetById(Guid id);
         Task<IEnumerable<Customer>> GetAll();
         Task<Customer> GetByEmail(string email);
 
-        void Add(Customer customer);
-        void Update(Customer customer);
-        void Remove(Customer customer);
+        Task Add(Customer customer);
+        Task Update(Customer customer);
+        Task Remove(Guid id);
     }
 }

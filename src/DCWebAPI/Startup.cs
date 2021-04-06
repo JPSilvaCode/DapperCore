@@ -1,3 +1,4 @@
+using DCData.Connection;
 using DCWebAPI.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,7 +31,11 @@ namespace DCWebAPI
         {
             services.AddApiConfiguration(Configuration);
 
+            services.AddDatabaseConfiguration(Configuration);
+
             services.AddSwaggerConfiguration();
+
+            services.RegisterServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
