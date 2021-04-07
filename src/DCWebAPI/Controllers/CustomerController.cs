@@ -11,10 +11,12 @@ namespace DCWebAPI.Controllers
     public class CustomerController : MainController
     {
         private readonly ICustomerData _customerData;
+        private readonly IUnitOfWork _uow;
 
-        public CustomerController(ICustomerData customerData)
+        public CustomerController(ICustomerData customerData, IUnitOfWork uow)
         {
             _customerData = customerData;
+            _uow = uow;
         }
 
         [HttpGet]
@@ -41,7 +43,9 @@ namespace DCWebAPI.Controllers
             if (!ModelState.IsValid)
                 return CustomResponse(ModelState);
 
+            _uow.BeginTransaction();
             await _customerData.Add(customer);
+            _uow.Commit();
 
             return Ok();
         }
@@ -52,7 +56,9 @@ namespace DCWebAPI.Controllers
             if (!ModelState.IsValid)
                 return CustomResponse(ModelState);
 
+            _uow.BeginTransaction();
             await _customerData.Update(customer);
+            _uow.Commit();
 
             return Ok();
         }
@@ -65,7 +71,9 @@ namespace DCWebAPI.Controllers
             if (customer == null)
                 return BadRequest();
 
+            _uow.BeginTransaction();
             await _customerData.Remove(customer.Id);
+            _uow.Commit();
 
             return Ok();
         }

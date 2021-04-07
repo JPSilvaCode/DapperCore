@@ -1,18 +1,19 @@
-﻿using System;
+﻿using DCData.Connection;
+using Microsoft.Extensions.Options;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using DCData.Connection;
-using Microsoft.Extensions.Options;
 
 namespace DCData.Data
 {
     public class Data : IDisposable
     {
         public IDbConnection Connection { get; }
+        public IDbTransaction Transaction { get; set; }
 
-        public Data(IOptions<ReadConfig> connectionString)
+        protected Data(IOptions<ReadConfig> readConfig)
         {
-            Connection = new SqlConnection(connectionString.Value.DefaultConnection);
+            Connection = new SqlConnection(readConfig.Value.DefaultConnection);
             Connection.Open();
         }
 

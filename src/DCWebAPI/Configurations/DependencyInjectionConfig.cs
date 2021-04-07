@@ -12,6 +12,7 @@ namespace DCWebAPI.Configurations
             if (services == null) throw new ArgumentNullException(nameof(services));
 
             services.AddScoped<ICustomerData, CustomerData>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<Data>();
         }
     }
