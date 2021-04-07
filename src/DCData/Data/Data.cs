@@ -11,7 +11,7 @@ namespace DCData.Data
         public IDbConnection Connection { get; }
         public IDbTransaction Transaction { get; set; }
 
-        protected Data(IOptions<ReadConfig> readConfig)
+        public Data(IOptions<ReadConfig> readConfig)
         {
             Connection = new SqlConnection(readConfig.Value.DefaultConnection);
             Connection.Open();

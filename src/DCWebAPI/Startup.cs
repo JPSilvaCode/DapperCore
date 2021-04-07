@@ -31,6 +31,8 @@ namespace DCWebAPI
         {
             services.AddApiConfiguration(Configuration);
 
+            services.AddAutoMapperConfiguration();
+
             services.AddDatabaseConfiguration(Configuration);
 
             services.AddSwaggerConfiguration();
